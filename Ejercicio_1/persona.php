@@ -7,6 +7,8 @@
 </head>
 <body>
     <form action="resultado.php" method="POST">
+
+    <h1>Calculo de horas extras</h1>
     
     <label for="">Número de documento</label>
         <input type="number" name="n_documento"> <br><br>
@@ -27,7 +29,7 @@
         <input type="text" name="direccion"> <br><br>
 
     <label for="">Fecha de nacimiento</label>
-        <input type="number" name="f_nacimiento"> <br><br>
+        <input type="number" placeholder="DD/MM/AA" name="f_nacimiento"> <br><br>
 
     <label for="">Género</label>
         <input type="text" name="genero"> <br><br>
@@ -43,9 +45,9 @@
 
     <label for="">Ciudad</label>
     <select name="ciudad" id="">
-        <option value="bogota">Bogotá</option>
-        <option value="cali">Calí</option>
-        <option value="medellín">Medellín</option>
+        <option value="Bogotá">Bogotá</option>
+        <option value="Cali">Calí</option>
+        <option value="Medellín">Medellín</option>
     </select>
     <br><br>
     

@@ -36,8 +36,8 @@
             <br>
             Ocupación
             <select name="ocupacion[]" id="">
-                <option value="tecnologo">Tecnólogo</option>
-                <option value="ingeniero">Ingeniero</option>
+                <option value="Tecnólogo">Tecnólogo</option>
+                <option value="Ingeniero">Ingeniero</option>
             </select>
             <br><br>
     <?php        
@@ -57,29 +57,32 @@
             foreach($salarios as $horas){
                 echo "<p>Nombre:  $nombres_emp[$cont]</p>";
                 echo "<p>Ocupación:  $ocupaciones[$cont]</p>";
-                if ($horas>160 && $ocupaciones[$cont]=="tecnologo"){
+                if ($horas>160 && $ocupaciones[$cont]=="Tecnólogo"){
                     $resta_horas = $horas - 160;
                     $suma_extras = $resta_horas * $horas_tec;
-                    $total = $suma_extras + 160;
-                    echo "Horas extras: ", $resta_horas;
-                    echo "Salario total: ", $total;
-                    '<br>';
-                }elseif ($horas<=160 && $ocupaciones[$cont]=="tecnologo"){
+                    $total = $suma_extras + ($horas_tec * 160);
+                    echo "Horas extras: ", $resta_horas. '<br>';
+                    echo "Pago horas extras: ", $suma_extras. '<br>';
+                    echo "Salario total: ", $total. '<br>';
+                    echo "________________________";
+                }elseif ($horas<=160 && $ocupaciones[$cont]=="Tecnólogo"){
                     $total = $horas * $horas_tec;
-                    echo "Horas extras : 0"; 
-                    echo "Salario total: ", $total;
-                }elseif ($horas>160 && $ocupaciones[$cont]=="ingeniero"){
+                    echo "Horas extras : 0". '<br>'; 
+                    echo "Salario total: ", $total. '<br>';
+                    echo "________________________";
+                }elseif ($horas>160 && $ocupaciones[$cont]=="Ingeniero"){
                     $resta_horas = $horas - 160;
                     $suma_extras = $resta_horas * $horas_ing;
-                    $total = $suma_extras + 160;
-                    echo "Horas extras: ", $resta_horas;
-                    echo "Salario total: ", $total;
-                    '<br>';
-                }elseif ($horas<=160 && $ocupaciones[$cont]=="ingeniero"){
+                    $total = $suma_extras + ($horas_ing * 160);
+                    echo "Horas extras: ", $resta_horas. '<br>';
+                    echo "Pago horas extras: ", $suma_extras. '<br>';
+                    echo "Salario total: ", $total. '<br>';
+                    echo "________________________";
+                }elseif ($horas<=160 && $ocupaciones[$cont]=="Ingeniero"){
                     $total = $horas * $horas_ing;
-                    echo "Horas extras : 0"; '<br>';
-                    echo "Salario total: ", $total;
-
+                    echo "Horas extras : 0". '<br>';
+                    echo "Salario total: ", $total. '<br>';
+                    echo "________________________";
                 }
                 $cont++;
             }

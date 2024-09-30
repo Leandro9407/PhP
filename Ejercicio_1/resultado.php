@@ -30,9 +30,34 @@ echo "Estado civil: ", $estado_civil. '<br>';
 $aux_transporte=$_REQUEST['aux_transporte'];
 echo "Auxilio de transporte: ", $aux_transporte. '<br>';
 
+$hor_extras=$_REQUEST['horas'];
+echo "Horas extras: ", $hor_extras. '<br>';
 
+$ciudad=$_REQUEST['ciudad'];
+echo "Ciudad: ", $ciudad. '<br>';
 
+if ($ciudad=='Bogotá'){
+    $suma_horas=$hor_extras*30000;
+    $salario=3000000+$suma_horas+$aux_transporte;
 
+    echo "Pago horas extras: ". $suma_horas, '<br>';
+    echo "Total salario: ", $salario;
+
+}elseif ($ciudad=='Cali'){
+    $suma_horas=$hor_extras*20000;
+    $salario=3000000+$suma_horas+$aux_transporte;
+
+    echo "Pago horas extras: ". $suma_horas, '<br>';
+    echo "Total salario: ", $salario;
+    
+}elseif ($ciudad=='Medellín'){
+    $suma_horas=$hor_extras*25000;
+    $salario=3000000+$suma_horas+$aux_transporte;
+
+    echo "Total horas extras: ". $suma_horas, '<br>';
+    echo "Total salario: ", $salario;
+    
+}
 
 
 /* $ocupacion=$_REQUEST['ocupacion'];
