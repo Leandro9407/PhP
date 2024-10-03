@@ -13,8 +13,6 @@
             <input type="text" name="nombre"> <br><br>
         <label for="">Teléfono</label>    
             <input type="number" name="telefono"> <br><br>
-        <label for="">Email</label>
-            <input type="text" name="email"> <br><br>
         <label for="">Producto</label> 
             <select name="producto" id=""> 
                 <option value="Monitor">Monitor</option>
