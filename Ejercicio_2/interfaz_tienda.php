@@ -14,7 +14,7 @@
         <label for="">Teléfono</label>    
             <input type="number" name="telefono"> <br><br>
         <label for="">Producto</label> 
-            <select name="producto" id=""> 
+            <select name="productos" id=""> 
                 <option value="Monitor">Monitor</option>
                 <option value="Teclado">Teclado</option>
                 <option value="Board">Board</option>
@@ -25,7 +25,10 @@
         <label for="">Cantidad</label>
             <input type="number" name="cantidad"> <br><br>
         <label for="">Efectivo</label> 
-            <input type="number" name="efectivo"> <br><br>    
+            <input type="number" name="efectivo"> <br><br>
+
+            <input type="submit" value="Enviar">
     </form>
+        
 </body>
 </html>

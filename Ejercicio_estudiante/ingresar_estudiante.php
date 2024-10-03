@@ -1,6 +1,6 @@
 <?php
 
-    $conexion=new mysqli('localhost', 'root', '', 'colegio');
+    include_once('conexion_estudiante.php');
 
     $documento=$_POST['documento'];
     $nombre=$_POST['nombre'];

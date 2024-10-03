@@ -32,7 +32,7 @@
     }
     
 
-    $conexion->query("INSERT INTO clientes(documento, nombre, telefono, productos, cantidad, efectivo, cambio, iva, monto) value ($documento, '$nombre', $telefono, '$email', $productos, $cantidad, $efectivo, $cambio, $iva, $monto)");
+    $conexion->query("INSERT INTO clientes(documento, nombre, telefono, productos, cantidad, efectivo, cambio, iva, monto) value ($documento, '$nombre', $telefono, '$productos', $cantidad, $efectivo, $cambio, $iva, $monto)");
 
     echo "Operación exitosa"
 ?>
