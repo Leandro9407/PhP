@@ -13,6 +13,7 @@
         $edad=$row['edad'];
         $promedio=$row['promedio'];
         $estado=$row['estado'];
+        $grupo=$row['grupo'];
 
         echo "Documento: ", $documento. '<br>';
         echo "Nombre: ", $nombre. '<br>';
@@ -21,6 +22,7 @@
         echo "Edad: ", $edad. '<br>';
         echo "Promedio: ", $promedio. '<br>';
         echo "Estado: ", $estado. '<br>';
+        echo "Grupo: ", $grupo. '<br>';
         echo '<br>';
     }
 

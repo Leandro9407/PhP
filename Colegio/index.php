@@ -131,7 +131,7 @@
                                             <option value="Filosofía">Filosofía</option>
                                         </select>
                                     </div>
-
+                                    
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         <input type="submit" class="btn btn-primary" value="Guardar">
@@ -153,6 +153,12 @@
                         </div>
                         <div class="modal-body">  
                         
+                                    <?php
+                             
+                                    include_once('./profesor/consultar_profesor.php');
+                                    
+                                    ?>
+                                    
                 
                             
                         </div>
@@ -198,15 +204,32 @@
                                     </div>
                                     <div class="col-4 mb-3">
                                         <label for="" class="form-label">Nota 1</label>
-                                        <input type="number" class="form-control" name="nota1">
+                                        <input type="number" class="form-control" step="0.001" name="nota1">
                                     </div>
                                     <div class="col-4 mb-3">
                                         <label for="" class="form-label">Nota 2</label>
-                                        <input type="number" class="form-control" name="nota2">
+                                        <input type="number" class="form-control" step="0.001" name="nota2">
                                     </div>
                                     <div class="col-4 mb-3">
                                         <label for="" class="form-label">Nota 3</label>
-                                        <input type="number" class="form-control" name="nota3">
+                                        <input type="number" class="form-control" step="0.001" name="nota3">
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="" class="form-label">Grupo</label>
+                                        <select class="form-select" name="grupo">
+                                            <?php
+
+                                            include_once('./estudiante/conexion_estudiante.php');
+
+                                                $consulta=$conexion->query( "SELECT * FROM grupos");
+                                                while ($row=$consulta->fetch_array()){
+
+                                                    echo '<option value="'.$row['nombre'].'" selected>'.$row['nombre'].'</option>';
+
+                                                };
+
+                                            ?>
+                                        </select>
                                     </div>
 
                                     <div class="modal-footer">
@@ -230,7 +253,11 @@
                         </div>
                         <div class="modal-body">  
                         
-                
+                                <?php
+
+                                include_once('./estudiante/consulta_estudiante.php');
+
+                                ?>
                             
                         </div>
                         <div class="modal-footer">
@@ -292,6 +319,11 @@
                         </div>
                         <div class="modal-body">  
                             
+                                <?php
+
+                                    include_once('./grupos/consultar_grupo.php');
+
+                                ?>
                 
                             
                         </div>
@@ -356,8 +388,12 @@
                         </div>
                         <div class="modal-body">  
                         
-                
-                            
+                            <?php
+
+                                include_once('./materias/consultar_materia.php');
+
+                            ?>
+                        
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

@@ -32,6 +32,22 @@
         <label for="">Nota 3:</label>
             <input type="number" step="0.001" name="nota_3"> <br><br>
 
+        <label for="">Grupos</label>    
+        <select name="grupo">
+            <?php
+                $consulta=$conexion->query("SELECT * FROM grupos");
+                while($row=$consulta->fetch_array()){
+
+                        echo '<option value="'.$row['nombre'].'" selected>'.$row['nombre'].'</option>';
+
+                }
+
+            ?>
+
+        </select>
+    
+    
+          
 
         <input type="submit" value="Ingresar">
     </form>    

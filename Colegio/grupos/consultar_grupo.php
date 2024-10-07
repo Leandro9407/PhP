@@ -15,6 +15,7 @@
         echo "director de grupo: ", $director. '<br>';
         echo "Grado: ", $grado. '<br>';
         echo "Año: ", $año. '<br>';
+        echo '<br>';
 
     }
 
