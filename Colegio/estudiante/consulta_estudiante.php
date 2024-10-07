@@ -14,7 +14,7 @@
         $promedio=$row['promedio'];
         $estado=$row['estado'];
 
-        echo "Documento: " , $documento. '<br>';
+        echo "Documento: ", $documento. '<br>';
         echo "Nombre: ", $nombre. '<br>';
         echo "Apellido: ", $apellido. '<br>';
         echo "Email: ", $email. '<br>';
