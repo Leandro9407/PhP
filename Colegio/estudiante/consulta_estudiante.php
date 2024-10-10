@@ -4,27 +4,39 @@
 
     $registro=$conexion->query("select * from estudiante");
 
-    while ($row=$registro->fetch_array()){
-
-        $documento=$row['documento'];
-        $nombre=$row['nombre'];
-        $apellido=$row['apellido'];
-        $email=$row['email'];
-        $edad=$row['edad'];
-        $promedio=$row['promedio'];
-        $estado=$row['estado'];
-        $grupo=$row['grupo'];
-
-        echo "Documento: ", $documento. '<br>';
-        echo "Nombre: ", $nombre. '<br>';
-        echo "Apellido: ", $apellido. '<br>';
-        echo "Email: ", $email. '<br>';
-        echo "Edad: ", $edad. '<br>';
-        echo "Promedio: ", $promedio. '<br>';
-        echo "Estado: ", $estado. '<br>';
-        echo "Grupo: ", $grupo. '<br>';
-        echo '<br>';
-    }
-
-
 ?>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Documento</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Promedio</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Grupo</th>
+        </tr>
+        </thead>
+        <tbody>
+
+    <?php    
+    while ($row=$registro->fetch_array()){
+    ?>
+    <tr>   
+            <td><?php echo $row['documento']; ?></td>
+            <td><?php echo $row['nombre']; ?></td>
+            <td><?php echo $row['apellido']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['edad']; ?></td>
+            <td><?php echo $row['promedio']; ?></td>
+            <td><?php echo $row['estado']; ?></td>
+            <td><?php echo $row['grupo']; ?></td>
+        </tr>
+    <?php
+    }
+    ?>    
+    </tbody>
+    </table>
+
+

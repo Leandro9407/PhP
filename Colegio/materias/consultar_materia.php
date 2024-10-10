@@ -3,19 +3,34 @@
     include_once('conexion_bd_materia.php');
 
     $registro=$conexion->query("select * from materias");
+?>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Asignatura</th>
+            <th scope="col">Profesor</th>
+            <th scope="col">Grado</th>
+            </tr>
+    </thead>
+    <tbody>
 
+    <?php    
     while ($row=$registro->fetch_array()){
+    ?>
 
-        $asignatura=$row['asignatura'];
-        $profesor=$row['profesor'];
-        $grado=$row['grado'];
+        <tr>   
+            <td><?php echo $row['asignatura']; ?></td>
+            <td><?php echo $row['profesor']; ?></td>
+            <td><?php echo $row['grado']; ?></td>
+        </tr>
+    <?php
+    }
+    ?>
+    
+    </tbody>
+    </table>
 
-        echo "Nombre de la materia: ", $asignatura. '<br>';
-        echo "Profesor: ", $profesor. '<br>';
-        echo "Grado: ", $grado. '<br>';
-        echo '<br>';
+        
            
 
-    }
-
-?>
+ 

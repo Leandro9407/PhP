@@ -3,20 +3,32 @@
     include_once('conexion_bd_grupo.php');
 
     $registro=$conexion->query("select * from grupos");
-
-    while ($row=$registro->fetch_array()){
-
-        $nombre=$row['nombre'];
-        $director=$row['director'];
-        $grado=$row['grado'];
-        $año=$row['año'];
-
-        echo "Nombre: ", $nombre. '<br>';
-        echo "director de grupo: ", $director. '<br>';
-        echo "Grado: ", $grado. '<br>';
-        echo "Año: ", $año. '<br>';
-        echo '<br>';
-
-    }
-
 ?>
+     <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Director de grupo</th>
+        <th scope="col">Grado</th>
+        <th scope="col">Año</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    <?php
+    while ($row=$registro->fetch_array()){
+    ?>
+
+        <tr>   
+            <td><?php echo $row['nombre']; ?></td>
+            <td><?php echo $row['director']; ?></td>
+            <td><?php echo $row['grado']; ?></td>
+            <td><?php echo $row['año']; ?></td>
+        </tr>
+
+    <?php
+    }
+    ?>
+    </tbody>
+    </table>    
+       

@@ -123,14 +123,21 @@
                                     <div class="col-md-4 mb-3">
                                         <label for="" class="form-label">Asignatura</label>
                                         <select class="form-select" name="asignatura">
-                                            <option selected>Elegir</option>
-                                            <option value="Matemáticas">Matemáticas</option>
-                                            <option value="Lenguaje">Lenguaje</option>
-                                            <option value="Idiomas">Idiomas</option>
-                                            <option value="Sociales">Sociales</option>
-                                            <option value="Filosofía">Filosofía</option>
+                                            <?php
+
+                                            include_once('./materias/conexion_bd_materia.php');
+
+                                                $consulta=$conexion->query( "SELECT * FROM materias");
+                                                while ($row=$consulta->fetch_array()){
+
+                                                    echo '<option value="'.$row['asignatura'].'" selected>'.$row['asignatura'].'</option>';
+
+                                                };
+
+                                            ?>
                                         </select>
                                     </div>
+                                    
                                     
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -145,7 +152,7 @@
         
             <!--modal profesores consultar-->
             <div class="modal fade" id="consultar_profesores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content bg-secondary text-light">
                         <div class="modal-header">
                             <h5 class="modal-title fs-4">Consulta profesores</h5>
@@ -194,11 +201,11 @@
                                         <label for="" class="form-label">Apellido</label>
                                         <input type="text" class="form-control" name="apellido">
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <div class="col-8 mb-3">
                                         <label for="" class="form-label">Email</label>
                                         <input type="text" class="form-control" name="email">
                                     </div>
-                                    <div class="col-10 mb-3">
+                                    <div class="col-2 mb-3">
                                         <label for="" class="form-label">Edad</label>
                                         <input type="number" class="form-control" name="edad">
                                     </div>
@@ -245,7 +252,7 @@
         
             <!--modal estudiante consultar-->
             <div class="modal fade" id="consultar_estudiante" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content bg-secondary text-light">
                         <div class="modal-header">
                             <h5 class="modal-title fs-4">Consulta estudiante</h5>
@@ -311,7 +318,7 @@
         
             <!--modal grupo consultar-->
             <div class="modal fade" id="consultar_grupo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content bg-secondary text-light">
                         <div class="modal-header">
                             <h5 class="modal-title fs-4">Consulta grupo</h5>
@@ -380,7 +387,7 @@
         
             <!--modal materia consultar-->
             <div class="modal fade" id="consultar_materia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content bg-secondary text-light">
                         <div class="modal-header">
                             <h5 class="modal-title fs-4">Consulta materia</h5>
@@ -402,7 +409,6 @@
                 </div>
             </div>
         </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

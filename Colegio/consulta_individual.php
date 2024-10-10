@@ -16,7 +16,7 @@
         <label for="">Número de documento</label>
         <input type="number" name="documento">
 
-        <input type="submit" value="consultar">
+        <input type="submit" value="Consultar">
 
 
     </form>
