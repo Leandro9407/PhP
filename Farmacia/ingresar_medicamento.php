@@ -7,6 +7,7 @@
     $expedicion=$_POST['expedicion'];
     $vencimiento=$_POST['vencimiento'];
     
+    
     $conexion->query("INSERT INTO medicamento(codigo, nombre, expedicion, vencimiento) value ($codigo, '$nombre', '$expedicion', '$vencimiento')");
 
     header("location: index.php");
