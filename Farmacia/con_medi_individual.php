@@ -23,8 +23,16 @@
 
                             if ($row=$consulta->fetch_array()){
                                 $nombre=$row['nombre'];
+                                $codigo=$row['codigo'];
+                                $expedicion=$row['expedicion'];
+                                $vencimiento=$row['vencimiento'];
 
-                                    echo "<p><strong>Medicamento encontrado: </strong></p>", $nombre;
+                                    echo "<p><strong>Medicamento encontrado: </strong></p>";
+                                    echo "<strong>Nombre: </strong> ", $nombre. '<br>';
+                                    echo "<strong>Código: </strong>", $codigo. '<br>';
+                                    echo "<strong>Fecha de expedición: </strong>", $expedicion. '<br>';
+                                    echo "<strong>Fecha de vencimiento: </strong>", $vencimiento;
+                                    
                                 } else {
                                     echo "<p><strong>El medicamento no se encuentra</strong></p>";
                                 }

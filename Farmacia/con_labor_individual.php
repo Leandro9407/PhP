@@ -23,8 +23,14 @@
 
                             if ($row=$consulta->fetch_array()){
                                 $nombre_l=$row['nombre_l'];
+                                $direccion=$row['direccion'];
+                                $ciudad=$row['ciudad'];
+                                $telefono=$row['telefono'];
 
-                                echo "<p><strong>Laboratorio encontrado: </strong></p> ", $nombre_l;
+                                echo "<p><strong>Laboratorio encontrado: </strong></p> ";
+                                echo "<strong>Nombre: </strong>", $nombre_l. '<br>';
+                                echo "<strong>Dirección: </strong>", $direccion, ", ", $ciudad. '<br>';
+                                echo "<strong>Teléfono: </strong>", $telefono;
                             } else
                                 echo "<p><strong>El laboratorio no se encuentra</p></strong>";
                     ?>
