@@ -23,10 +23,10 @@
         </tr>
 
         <?php
-            if(isset($_POST['buscar'])){    /* Isset para saber si hay algo, en este caso diria, si buscar esta vacio hacer */
+            if(isset($_POST['buscar'])){    /* Isset para saber si hay algo, en este caso diria, si buscar esta vacio hacer... */
                 $buscar=($_POST['buscar']);
 
-                $consulta=$conexion->query("SELECT * FROM alumnos WHERE nombre LIKE '%$buscar%' ORDER BY nombre ASC"); #Like y %% es para buscar de forma impresisa(solo agregando iniciales | orden by ASC para traer la consulta por orden alfabetico)
+                $consulta=$conexion->query("SELECT * FROM alumnos WHERE nombre LIKE '%$buscar%' ORDER BY nombre ASC"); #Like y %% es para buscar de forma imprecisa(solo agregando iniciales | orden by ASC para traer la consulta por orden alfabetico)
 
             }else{
                 $consulta=$conexion->query("SELECT * FROM alumnos");

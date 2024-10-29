@@ -19,7 +19,7 @@
 
                         $nombre_l=$_GET['nombre_l'];
 
-                        $consulta=$conexion->query("SELECT * FROM laboratorio WHERE nombre_l='$nombre_l'");
+                        $consulta=$conexion->query("SELECT * FROM laboratorio WHERE nombre_l LIKE '%$nombre_l%' ORDER BY nombre_l ASC");
 
                             if ($row=$consulta->fetch_array()){
                                 $nombre_l=$row['nombre_l'];
