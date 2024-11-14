@@ -5,7 +5,7 @@
     <a class="btn btn-primary" href="modificar.php?     <!-- pagina a direccionar -->
         nombre=<?php echo $nombre ?> &
         email=<?php echo $row['email'] ?> &
-        nota=<?php echo $row['nota'] ?>" title="editar"
+        nota=<?php echo $row['nota'] ?>" title="editar">
         <i class="icon-edit">Editar</i>
 
     </a>

@@ -11,7 +11,7 @@
     
     <section class="container-md text-center shadow pb-4 mt-5">
         <div class="row">
-            <h2 class="titulo_m my-4"><strong>Farmacia L.A</strong></h2>
+            <h1 class="titulo_m my-4"><strong>Farmacia L.A</strong></h1>
             <div class="boton_volver mb-3">
                 <a class="btn btn-primary" href="http://localhost/PhP/farmacia/index.php" role="button">Volver</a>
             </div>
@@ -55,14 +55,14 @@
 
                             <table class="table">
                             <thead>
-                            <tr>
-                              <th scope="col">Nombre del laboratorio</th>
-                              <th scope="col">Dirección</th>
-                              <th scope="col">Ciudad</th>
-                              <th scope="col">Teléfono</th>
-                              <th scope="col"></th>
-                              <th scope="col"></th>
-                            </tr>
+                                <tr>
+                                <th scope="col">Nombre del laboratorio</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Ciudad</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                </tr>
                             </thead>
                             <tbody>
 
@@ -71,20 +71,33 @@
                             while ($row=$consulta->fetch_array()){
                             ?>
                             <tr>
-                              <td><?php echo $row['nombre_l']; ?></td>
-                              <td><?php echo $row['direccion']; ?></td>
-                              <td><?php echo $row['ciudad']; ?></td>
-                              <td><?php echo $row['telefono']; ?></td>
-                              <td><button type="button" class="btn btn-primary"><i class='bx bxs-pencil'></i></button></td>
-                              <td><button type="button" class="btn btn-danger"><i class='bx bxs-user-x'></i></button></td>
+                                <td><?php echo $row['nombre_l']; ?></td>
+                                <td><?php echo $row['direccion']; ?></td>
+                                <td><?php echo $row['ciudad']; ?></td>
+                                <td><?php echo $row['telefono']; ?></td>
+                                <td>
+                                    <a class="btn btn-primary" href="modificar_laboratorio.php?
+                                        nombre_l=<?php echo $row['nombre_l'] ?>  &
+                                        direccion=<?php echo $row['direccion'] ?>  &
+                                        ciudad=<?php echo $row['ciudad'] ?>  &
+                                        telefono=<?php echo $row['telefono'] ?>" title="Editar">
+                                        <i class='bx bxs-pencil'></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="eliminar_laboratorio.php?
+                                        nombre_l=<?php echo $row['nombre_l'] ?>" title="Eliminar">
+                                        <i class='bx bxs-user-x'></i>
+                                    </a>
+                                </td>
                             </tr>
 
                             <?php
                             }
                             ?>
 
+                            </thead>
                             </tbody>
-                            </table>
 
                         </div>
                     </div>

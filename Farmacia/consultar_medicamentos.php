@@ -86,19 +86,33 @@
                             ?>
 
                             <tr>
-                            <td><?php echo $row['codigo']; ?></td>
-                            <td><?php echo $row['nombre']; ?></td>
-                            <td><?php echo $row['expedicion']; ?></td>
-                            <td><?php echo $row['vencimiento']; ?></td>
-                            <td><button type="button" class="btn btn-primary"><i class='bx bxs-pencil'></i></button></td>
-                            <td><button type="button" class="btn btn-danger"><i class='bx bxs-user-x'></i></button></td>
+                                <td><?php echo $row['codigo']; ?></td>
+                                <td><?php echo $row['nombre']; ?></td>
+                                <td><?php echo $row['expedicion']; ?></td>
+                                <td><?php echo $row['vencimiento']; ?></td>
+                                <td>
+                                    <a class="btn btn-primary" href="modificar_medicamento.php?
+                                        codigo=<?php echo $row['codigo'] ?>  &
+                                        nombre=<?php echo $row['nombre'] ?>  &
+                                        expedicion=<?php echo $row['expedicion'] ?>  &
+                                        vencimiento=<?php echo $row['vencimiento'] ?>" title="Editar">
+                                        <i class='bx bxs-pencil'></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="eliminar_medicamento.php?
+                                        nombre=<?php echo $row['nombre'] ?>" title="Eliminar">
+                                        <i class='bx bxs-user-x'></i>
+                                    </a>
+                                </td>
                             </tr>
+                            
 
                             <?php
                             }
                             ?>
                             </thead>
-                            <tbody>
+                            </tbody>
 
                         </div>
                     </div>
