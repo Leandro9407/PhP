@@ -8,6 +8,18 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
 </head>
 <body>
+
+<?php
+
+    if (isset($_POST['ini']) and isset($_POST['fin'])){
+        $inicio=$_POST['ini'];
+        $final=$_POST['fin'];
+    } else {
+        $inicio = date("y-m-d");
+        $final = date("y-m-d");
+    }
+
+?>
     
     <section class="container-md text-center shadow pb-4 mt-5">
         <div class="row">
@@ -36,8 +48,24 @@
                         </div>    
                     </form>
                 </div>
-    
-            </div>    
+                
+            </div>  
+
+            <div class="formularios d-flex justify-content-center">
+                <div class="col-4 border rounded-3 shadow mb-3 bg-secondary p-3 ms-2">
+                    <form action="" method="POST">
+                        <label class="fs-5 text-light shadow rounded-3 p-1">Fecha de inicio</label>
+                            <input type="date" class="form-control my-3" name="ini" value="<?php echo $inicio ?>">
+                        <label class="fs-5 text-light shadow rounded-3 p-1">Fecha de fin</label>
+                            <input type="date" class="form-control my-3" name="fin" value="<?php echo $final ?>">
+                        <div class="footer d-flex">
+                            <input type="submit" class="btn btn-primary mb-2 ms-1" value="Buscar">
+                            <a class="btn btn-primary mb-2 ms-2" href="http://localhost/PhP/farmacia/consultar_medicamentos.php">Volver a consulta</a>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item shadow">
                     <h2 class="accordion-header">
@@ -60,6 +88,12 @@
                                 $buscar_nombre=$_POST['buscar_nombre'];
 
                                 $consultar=$conexion->query("SELECT * FROM medicamento WHERE nombre LIKE '%$buscar_nombre%' ORDER BY nombre ASC");
+                            
+                            } else if (!empty($_POST['ini']) and !empty($_POST['fin'])){
+                                $ini=$_POST['ini'];
+                                $fin=$_POST['fin'];
+
+                                $consultar=$conexion->query("SELECT * FROM medicamento WHERE expedicion BETWEEN '$ini' and '$fin' ORDER BY expedicion ASC");
 
                             } else {
 
@@ -71,16 +105,16 @@
                             <table class="table">
                             <thead>
                                 <tr>
-                                <th scope="col">Código</th>
-                                <th scope="col">Nombre del medicamento</th>
-                                <th scope="col">Fecha de expedición</th>
-                                <th scope="col">Fecha de vencimiento</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nombre del medicamento</th>
+                                    <th scope="col">Fecha de expedición</th>
+                                    <th scope="col">Fecha de vencimiento</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
-
+ 
                             <?php
                             while ($row=$consultar->fetch_array()){
                             ?>

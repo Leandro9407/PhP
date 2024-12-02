@@ -85,8 +85,21 @@
                                 <td><?php echo $row['nombre']; ?></td>
                                 <td><?php echo $row['nombre_l']; ?></td>
                                 <td><?php echo $row['cantidad']; ?></td>
-                                <td><button type="button" class="btn btn-primary"><i class='bx bxs-pencil'></i></button></td>
-                                <td><button type="button" class="btn btn-danger"><i class='bx bxs-user-x'></i></button></td>
+                                <td>
+                                    <a class="btn btn-primary" href="modificar_inventario.php?
+                                    nombre=<?php echo $row['nombre'] ?>  &
+                                    nombre_l=<?php echo $row['nombre_l'] ?>  &
+                                    cantidad=<?php echo $row['cantidad'] ?>" title="Editar">
+                                        <i class='bx bxs-pencil'></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="eliminar_inventario.php?
+                                    nombre=<?php echo $row['nombre'] ?>  &
+                                    nombre_l=<?php echo $row['nombre_l'] ?>" title="Eliminar">
+                                    <i class='bx bxs-user-x'></i>
+                                    </a>
+                                </td>
 
                             </tr>
                         
